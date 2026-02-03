@@ -1,11 +1,24 @@
-//:Stdheader
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strcat.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: gleccia <marvin@42.fr>                     +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/02/03 15:17:34 by gleccia           #+#    #+#             */
+/*   Updated: 2026/02/03 15:17:41 by gleccia          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include <stdio.h>
+
 char	*ft_strcat(char	*dest, char	*src)
 {
-	char *ptr = dest;
-	
+	char	*ptr;
+
+	ptr = dest;
 	while (*ptr)
-	ptr++;
+		ptr++;
 	while (*src)
 	{
 		*ptr = *src;
@@ -13,10 +26,9 @@ char	*ft_strcat(char	*dest, char	*src)
 		src++;
 	}
 	*ptr = '\0';
-
 	return (dest);
 }
-int main(void)
+/*int main(void)
 {
     char buffer[50] = "Hello ";
     char add[] = "World!";
@@ -24,7 +36,5 @@ int main(void)
     printf("Before: \"%s\"\n", buffer);
     ft_strcat(buffer, add);
     printf("After : \"%s\"\n", buffer);
-
     return (0);
-}
-
+}*/

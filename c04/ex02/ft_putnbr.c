@@ -1,12 +1,23 @@
-//:StdheadeR
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_putnbr.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: gleccia <marvin@42.fr>                     +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/02/03 16:19:16 by gleccia           #+#    #+#             */
+/*   Updated: 2026/02/03 16:19:19 by gleccia          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include <unistd.h>
 
-void	ft_putchar(char	c)
+void	ft_putchar(char c)
 {
 	write (1, &c, 1);
 }
 
-void	ft_putnbr(int	nb)
+void	ft_putnbr(int nb)
 {
 	if (nb == -2147483648)
 	{
@@ -25,7 +36,7 @@ void	ft_putnbr(int	nb)
 	ft_putchar((nb % 10) + '0');
 }
 
-int main ()
+/*int main ()
 {
 	ft_putnbr(42);
 	write(1, "\n", 1);
@@ -38,4 +49,4 @@ int main ()
 	ft_putnbr(2147483647);
 	write(1, "\n", 1);
 	return (0);
-}
+}*/
