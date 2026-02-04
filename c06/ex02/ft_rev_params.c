@@ -1,21 +1,33 @@
-//:Stdheader
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_rev_params.c                                    :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: gleccia <marvin@42.fr>                     +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/02/04 14:47:27 by gleccia           #+#    #+#             */
+/*   Updated: 2026/02/04 14:47:37 by gleccia          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include <unistd.h>
+
 int	main(int argc, char *argv[])
 {
-	int i;
-	int j;
+	int	i;
+	int	j;
 
 	i = argc -1;
-	while(i >= 1)
+	while (i >= 1)
 	{
 		j = 0;
-		while(argv[i][j] != '\0')
+		while (argv[i][j] != '\0')
 		{
 			write(1, &argv[i][j], 1);
-				j++;
+			j++;
 		}
 		write(1, "\n", 1);
 		i--;
 	}
-	return(0);
+	return (0);
 }
