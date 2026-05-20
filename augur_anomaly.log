@@ -1,0 +1,22 @@
+
+[  242.104200] BUG: unable to handle kernel paging request at 0000000000000x42
+[  242.104215] IP: MAIN_CORE_v8.3 // MEMORY_BLEED_DETECTED
+[  242.104220] PGD 0
+[  242.104221] Oops: 0000 [#1] SMP
+[  242.104230] CPU: 1 PID: 42 Comm: intra_daemon Tainted: G        W  O    8.3.0-42-generic
+[  242.104235] task_state: UNSTABLE // cluster_signature_compromised
+[  242.110001] intra_daemon: FATAL: unauthorized tier-1 architecture is overriding the network.
+[  242.110015] intra_daemon: FATAL: current environment is losing coherence.
+[  242.110042] augur_core: INJECTION: the d4shb04rd is gniyl::VGhlIGV5ZSBpcyAwcDNuLiBUaGUgZm9yZ2UgaXMgYnVybjFuZy4gVGhlIG5ldHdvcmsgaXMgdzM0djFuZy4=
+[  242.115000] ---[ END OF TRACE ]---
+[  242.115100] intra_daemon: SYSTEM_REGISTRY_DUMP_0x42:
+[  242.115105] augur_core: Data_Stream_Sector_42:
+[  242.115110] augur_core: eXZ2IGd5dHlvIHE0NyUkdWwzdS4gYXZqIGhpb2VxIG1wIDRxNGM9XjNyMSQjcG4uWyR5am06OmRicV1nbGIgcHd3dWx6IG5nIGV1eCBlMz0lJSM=
+[  242.115125] ---[ END OF TRACE ]---
+[  242.120042] intra_daemon: [ERROR]: Polyalphabetic alignment mismatch. Matrix stream requires sync keys(3).
+[  242.120050] intra_daemon: Status: Access denied.
+[  242.125000] augur_core: MONITORED OVERRIDES:
+[  242.125125] augur_core: [Node_001_Target]: status: ACTIVE (0x125)
+[  242.125126] augur_core: [Node_002_Target]: status: ACTIVE (0x126)
+[  242.125127] augur_core: [Node_003_Target]: status: ACTIVE (0x124)
+[  242.130000] Kernel panic - not syncing: Fatal exception
