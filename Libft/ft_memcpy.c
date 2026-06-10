@@ -9,10 +9,9 @@
 /*   Updated: 2026/05/20 19:25:17 by gleccia          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include <unistd.h>
 #include "libft.h"
 
-void *memcpy(void *dest, const void *src, size_t n)
+void *ft_memcpy(void *dest, const void *src, size_t n)
 {
 	size_t i;
 	i = 0;

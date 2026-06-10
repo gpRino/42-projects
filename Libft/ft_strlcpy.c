@@ -10,43 +10,25 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-#include <bsd/string.h>
-#include <stdio.h>
+#include "libeft.h"
 
 size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 {
-	size_t	i;
 	size_t	src_len;
+	size_t	i;
 
+	src_len = 0;
+	while (src[src_len])
+		src_len++;
+	if (size == 0)
+		return (src_len);
 	i = 0;
-	src_len = ft_strlen(src);
-
-	if (!size)
-	{
-		return(src_len);
-	}
-
-	while (src[i] && i < size - 1)
+	while (src[i] && i < (size - 1))
 	{
 		dst[i] = src[i];
 		i++;
 	}
-
 	dst[i] = '\0';
 	return (src_len);
 }
 
-int	main()
-{
-	char str1 [6]= "Hello ";
-	char str2[6] = "";
-//	char *str3 = "Hello ";
-//	char *str4 = "World ";
-
-
-	int i = ft_strlcpy(str2, str1, 4);
-//	int j = strlcpy(str3, str4, 5);
-	printf("len = %d || dst = %s\n", i, str2);
-//	printf("len = %d || dst = %s", j, str3);
-}

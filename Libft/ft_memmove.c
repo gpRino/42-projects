@@ -14,23 +14,6 @@
 
 void *ft_memmove(void *dest, const void *src, size_t count)
 {
-/*	char str[] = "ABCDEFG";
-	int i;
-	i = 0;
-
-	if (dest > src)
-	{
-	dest[i] == src[i];
-		i++;
-		count--;
-	}
-}
-
-	if (dest < src)
-	{
-
-		count --;
-*/
         unsigned char   *d;
         const unsigned char     *s;
 

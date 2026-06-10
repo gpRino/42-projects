@@ -1,27 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memset.c                                        :+:      :+:    :+:   */
+/*   ft_strnstr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gleccia <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/05/19 19:02:24 by gleccia           #+#    #+#             */
-/*   Updated: 2026/05/19 19:22:24 by gleccia          ###   ########.fr       */
+/*   Created: 2026/06/10 13:14:33 by gleccia           #+#    #+#             */
+/*   Updated: 2026/06/10 13:15:13 by gleccia          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "libeft.h"
 
-void	*ft_memset(void *s, int c, size_t n)
+char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 {
-	unsigned char *ptr;
-	size_t i;
-	ptr = (unsigned char *)s;
+	size_t	i;
+	size_t	j;
+
 	i = 0;
-	while (i < n)
+	if (needle[0] == '\0')
+		return ((char *)haystack);
+	while (haystack[i] && i < len)
 	{
-		ptr[i] = (unsigned char)c;
+		j = 0;
+		while (haystack[i + j] && needle[j] && (i + j) < len
+			&& haystack[i + j] == needle[j])
+			j++;
+		if (needle[j] == '\0')
+			return ((char *)(haystack + i));
 		i++;
 	}
-	return (s);
+	return (NULL);
 }
