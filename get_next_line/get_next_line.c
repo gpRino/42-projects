@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: gleccia <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/06/15 15:11:11 by gleccia           #+#    #+#             */
-/*   Updated: 2026/06/15 15:11:11 by gleccia          ###   ########.fr       */
+/*   Created: 2026/06/16 15:32:58 by gleccia           #+#    #+#             */
+/*   Updated: 2026/06/16 15:33:01 by gleccia          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,20 +25,13 @@ char	*read_and_stash(int fd, char *stash)
 	{
 		bytes_read = read(fd, buffer, BUFFER_SIZE);
 		if (bytes_read == -1)
-		{
-			free(buffer);
-			free(stash);
-			return (NULL);
-		}
+			return (free(buffer), free(stash), NULL);
 		buffer[bytes_read] = '\0';
 		stash = ft_strjoin(stash, buffer);
 	}
 	free(buffer);
 	if (stash && stash[0] == '\0')
-	{
-		free(stash);
-		return (NULL);
-	}
+		return (free(stash), NULL);
 	return (stash);
 }
 

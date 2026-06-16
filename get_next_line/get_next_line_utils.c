@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: gleccia <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/06/15 15:11:11 by gleccia           #+#    #+#             */
-/*   Updated: 2026/06/15 15:11:11 by gleccia          ###   ########.fr       */
+/*   Created: 2026/06/16 15:33:16 by gleccia           #+#    #+#             */
+/*   Updated: 2026/06/16 15:33:18 by gleccia          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 char	*ft_strchr(const char *s, int c)
 {
-    if (!s)
+	if (!s)
 		return (NULL);
 	while (*s)
 	{
@@ -43,7 +43,7 @@ char	*ft_strjoin(char *s1, char const *s2)
 	size_t	i;
 	size_t	j;
 
-    if (!s1)
+	if (!s1)
 	{
 		s1 = malloc(sizeof(char) * 1);
 		if (!s1)
@@ -56,18 +56,11 @@ char	*ft_strjoin(char *s1, char const *s2)
 	if (!str)
 		return (free(s1), NULL);
 	i = 0;
-	while (s1[i])
-	{
-		str[i] = s1[i];
-		i++;
-	}
+	while (s1[i] && ++i)
+		str[i - 1] = s1[i - 1];
 	j = 0;
-	while (s2[j])
-	{
-		str[i + j] = s2[j];
-		j++;
-	}
+	while (s2[j] && ++j)
+		str[i + j - 1] = s2[j - 1];
 	str[i + j] = '\0';
-	free(s1);
-	return (str);
+	return (free(s1), str);
 }
