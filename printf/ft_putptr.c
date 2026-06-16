@@ -1,30 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_puthex.c                                        :+:      :+:    :+:   */
+/*   ft_putptr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gleccia <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/06/16 16:31:55 by gleccia           #+#    #+#             */
-/*   Updated: 2026/06/16 21:10:11 by gleccia          ###   ########.fr       */
+/*   Created: 2026/06/16 21:14:51 by gleccia           #+#    #+#             */
+/*   Updated: 2026/06/16 21:14:55 by gleccia          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
-#include <unistd.h>
 
-int	ft_puthex(unsigned int n, char format)
+static int	ft_print_ptr(unsigned long n)
 {
-	char	*base;
+	char	*hex;
 	int		count;
 
-	if (format == 'X')
-		base = "0123456789ABCDEF";
-	else
-		base = "0123456789abcdef";
+	hex = "0123456789abcdef";
 	count = 0;
 	if (n >= 16)
-		count += ft_puthex(n / 16, format);
-	count += ft_putchar(base[n % 16]);
+		count += ft_print_ptr(n / 16);
+	count += ft_putchar(hex[n % 16]);
+	return (count);
+}
+
+int	ft_putptr(void *ptr)
+{
+	int				count;
+	unsigned long	addr;
+
+	if (!ptr)
+		return (write(1, "(nil)", 5));
+	addr = (unsigned long)ptr;
+	count = write(1, "0x", 2);
+	count += ft_print_ptr(addr);
 	return (count);
 }

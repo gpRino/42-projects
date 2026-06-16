@@ -1,39 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr_base.c                                   :+:      :+:    :+:   */
+/*   ft_putstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gleccia <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/06/16 16:35:55 by gleccia           #+#    #+#             */
-/*   Updated: 2026/06/16 21:11:24 by gleccia          ###   ########.fr       */
+/*   Created: 2026/06/16 21:15:20 by gleccia           #+#    #+#             */
+/*   Updated: 2026/06/16 21:15:25 by gleccia          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 #include "ft_printf.h"
 
-#define BASE_10 "0123456789"
-#define BASE_16_LOW "0123456789abcdef"
-#define BASE_16_UP "0123456789ABCDEF"
-
-void	ft_putnbr_base(int nbr, char *base, int len)
+int	ft_putstr(char *str)
 {
-	long	n;
+	int	count;
 
-	n = nbr;
-	if (nbr < 0)
+	if (!str)
+		return (write(1, ("(null)"), 6));
+	count = 0;
+	while (str[count] != '\0')
 	{
-		write(1, "-", 1);
-		n = -n;
+		write(1, &str[count], 1);
+		count++;
 	}
-	if (n >= len)
-	{
-		ft_putnbr_base(n / len, base, len);
-	}
-	write(1, &base[n % len], 1);
-}
-
-int	main(void)
-{
-	ft_putnbr_base(-2147483648, BASE_10, 10);
-	return (0);
+	return (count);
 }
