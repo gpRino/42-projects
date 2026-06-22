@@ -31,9 +31,3 @@ void	ft_putnbr_base(int nbr, char *base, int len)
 	}
 	write(1, &base[n % len], 1);
 }
-
-int	main(void)
-{
-	ft_putnbr_base(-2147483648, BASE_10, 10);
-	return (0);
-}
