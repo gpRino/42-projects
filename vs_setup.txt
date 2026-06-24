@@ -1,0 +1,26 @@
+{
+  "workbench.colorTheme": "Aura Dracula Spirit (Synthwave)",
+  //"workbench.activityBar.location": "hidden",
+  // "workbench.editor.showTabs": "single",
+  "workbench.statusBar.visible": false,
+  "workbench.startupEditor": "none",
+  "workbench.tips.enabled": false,
+  "editor.minimap.enabled": false,
+  "breadcrumbs.enabled": false,
+  "worckbench.iconTheme": "Material Icon Theme",
+  "material-icon-theme.hidesExplorerArrows": true,
+  "workbench.iconTheme": "material-icon-theme",
+  "gitlens.ai.model": "vscode",
+  "gitlens.ai.vscode.model": "copilot:oswe-vscode-modelD",
+  "workbench.tree.indent": 13,
+  "window.titleBarStyle": "custom",
+  "custom-ui-style.electron": {
+    "trafficLightPosition": {
+      "x": 20,
+      "y": 16,
+    },
+  },
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.formatOnSave": true,
+  "window.newWindowProfile": "Default",
+}
