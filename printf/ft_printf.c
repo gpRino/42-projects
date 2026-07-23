@@ -21,7 +21,7 @@ static int	ft_format(va_list args, char format)
 	else if (format == 'p')
 		return (ft_putptr(va_arg(args, void *)));
 	else if (format == 'd' || format == 'i')
-		return (ft_putnbr(va_arg(args, int)));
+		return (ft_putnbr_base(va_arg(args, int), "0123456789", 10));
 	else if (format == 'u')
 		return (ft_putunsigned(va_arg(args, unsigned int)));
 	else if (format == 'x' || format == 'X')
