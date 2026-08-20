@@ -142,9 +142,6 @@ This project is part of the 42 School curriculum. Feel free to browse the code f
 ---
 
 <p align="center">
-  Made with 💜 and a lot of debugging during my time at 42 Roma.
-</p>
-
-<p align="center">
+  Made with 💜 and a lot of debugging during my time at 42 Roma.<br>
   Gianmarco Leccia
 </p>
