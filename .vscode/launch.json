@@ -1,0 +1,44 @@
+/*{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "(gdb) Debug File Corrente",
+      "type": "cppdbg",
+      "request": "launch",
+      // Compila ed esegue il file che hai attualmente aperto nell'editor
+      "program": "${fileDirname}/${fileBasenameNoExtension}",
+      "args": ["-i", "input.txt", "--verbose"],
+      "cwd": "${fileDirname}",
+      "MIMode": "gdb",
+      "preLaunchTask": "C/C++: gcc build active file" // Assicurati che questo corrisponda al tuo task in tasks.json
+    }
+  ]
+}*/
+
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "(gdb) Debug file corrente",
+      "type": "cppdbg",
+      "request": "launch",
+      "program": "${fileDirname}/${fileBasenameNoExtension}.exe",
+      "args": ["${input:programArgs}"],
+      "stopAtEntry": false,
+      "cwd": "${fileDirname}",
+      "environment": [],
+      "externalConsole": false,
+      "MIMode": "gdb",
+      "miDebuggerPath": "C:\\msys64\\ucrt64\\bin\\gdb.exe",
+      "preLaunchTask": "C/C++: gcc.exe build active file"
+    }
+  ],
+  "inputs": [
+    {
+      "id": "programArgs",
+      "type": "promptString",
+      "description": "Argomenti come da terminale (usa le virgolette per un argomento con spazi, es: \"testo con spazi\")",
+      "default": ""
+    }
+  ]
+}
