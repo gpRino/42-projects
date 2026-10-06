@@ -13,19 +13,20 @@ def test_error_types() -> None:
     print("=== Garden Error Types Demo ===")
     for op in [0, 1, 2, 3, 4]:
         print(f"Testing operation {op}...")
-    try:
-        garden_operations(op)
-        print("Operation completed successfully")
-    except ValueError as abc_error:
-        print(f"Caught ZeroDivisionError: {abc_error}")
-    except ZeroDivisionError as zero_error:
-        print(f"Caught ZeroDivisionError: {zero_error}")
-    except FileNotFoundError as file_error:
-        print(f"Caught FileNotFoundError: {file_error}")
-    except TypeError as type_error:
-        print(f"Caught TypeError: {type_error}")
+        try:
+             garden_operations(op)
+        except ValueError as abc_error:
+         print(f"Caught ZeroDivisionError: {abc_error}")
+        except ZeroDivisionError as zero_error:
+         print(f"Caught ZeroDivisionError: {zero_error}")
+        except FileNotFoundError as file_error:
+         print(f"Caught FileNotFoundError: {file_error}")
+        except TypeError as type_error:
+         print(f"Caught TypeError: {type_error}")
     print()
     print("Operation completed successfully")
+    print()
+    print("All error types tested successfully!")
 
 if __name__ == "__main__":
     test_error_types()
