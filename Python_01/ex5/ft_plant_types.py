@@ -28,14 +28,15 @@ class Flower(Plant):
 
 
 class Tree(Plant):
-    def __init__(self, name: str, height: float, age: int, trunk_diameter: float) -> None:
+    def __init__(self, name, height, age, trunk_diameter):
         super().__init__(name, height, age)
         self.trunk_diameter = float(trunk_diameter)
 
     def produce_shade(self) -> None:
         print(f"[asking the {self.name.lower()} to produce shade]")
         print(
-            f"Tree {self.name} now produces a shade of {self._height}cm long and {self.trunk_diameter}cm wide."
+            f"Tree {self.name} now produces a shade of "
+            f"{self._height}cm long and {self.trunk_diameter}cm wide."
         )
 
     def show(self) -> None:
@@ -44,9 +45,7 @@ class Tree(Plant):
 
 
 class Vegetable(Plant):
-    def __init__(
-        self, name: str, height: float, age: int, harvest_season: str, nutritional_value: int = 0
-    ) -> None:
+    def __init__(self, name, height, age, harvest_season, nutritional_value):
         super().__init__(name, height, age)
         self.harvest_season = harvest_season
         self.nutritional_value = nutritional_value
@@ -78,7 +77,7 @@ if __name__ == "__main__":
     oak.produce_shade()
     print()
     print("=== Vegetable")
-    tomato = Vegetable("Tomato", 5.0, 10, "April")
+    tomato = Vegetable("Tomato", 5.0, 10, "April", 0)
     tomato.show()
     print("[make tomato grow and age for 20 days]")
     tomato.grow(42.0)

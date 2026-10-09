@@ -7,7 +7,10 @@ class Plant:
             self.show_count = 0
 
         def display(self) -> None:
-            print(f"Stats: {self.grow_count} grow, {self.age_count} age, {self.show_count} show")
+            print(
+                f"Stats: {self.grow_count} grow, "
+                f"{self.age_count} age, "
+                f"{self.show_count} show")
 
     def __init__(self, name: str, height: float, age: int) -> None:
         self.name = name
@@ -68,15 +71,17 @@ class Tree(Plant):
             super().display()
             print(f"{self.shade_count} shade")
 
-    def __init__(self, name: str, height: float, age: int, trunk_diameter: float) -> None:
+    def __init__(self, name, height, age, trunk_diameter):
         super().__init__(name, height, age)
         self.trunk_diameter = float(trunk_diameter)
-        self.stats = Tree.Stats()
+        self.stats: Tree.Stats = Tree.Stats()
 
     def produce_shade(self) -> None:
         print(f"[asking the {self.name.lower()} to produce shade]")
         self.stats.shade_count += 1
-        print(f"Tree {self.name} now produces a shade of {self._height}cm long and {self.trunk_diameter}cm wide.")
+        print(
+            f"Tree {self.name} now produces a shade of "
+            f"{self._height}cm long and {self.trunk_diameter}cm wide.")
 
     def show(self) -> None:
         super().show()
@@ -84,7 +89,7 @@ class Tree(Plant):
 
 
 class Seed(Flower):
-    def __init__(self, name: str, height: float, age: int, color: str, seeds: int = 0) -> None:
+    def __init__(self, name, height, age, color, seeds) -> None:
         super().__init__(name, height, age, color)
         self.seeds = seeds
 
