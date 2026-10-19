@@ -1,11 +1,11 @@
-def garden_operations(operation_nuber: int) -> None:
-    if operation_nuber == 0:
+def garden_operations(operation_number: int) -> None:
+    if operation_number == 0:
         int("abc")
-    elif operation_nuber == 1:
+    elif operation_number == 1:
         1 / 0
-    elif operation_nuber == 2:
-        open("/non/existing/file")
-    elif operation_nuber == 3:
+    elif operation_number == 2:
+        open("/non/existent/file")
+    elif operation_number == 3:
         "abc" + 1
 
 
@@ -14,19 +14,19 @@ def test_error_types() -> None:
     for op in [0, 1, 2, 3, 4]:
         print(f"Testing operation {op}...")
         try:
-             garden_operations(op)
-        except ValueError as abc_error:
-         print(f"Caught ZeroDivisionError: {abc_error}")
-        except ZeroDivisionError as zero_error:
-         print(f"Caught ZeroDivisionError: {zero_error}")
-        except FileNotFoundError as file_error:
-         print(f"Caught FileNotFoundError: {file_error}")
-        except TypeError as type_error:
-         print(f"Caught TypeError: {type_error}")
-    print()
-    print("Operation completed successfully")
+            garden_operations(op)
+            print("Operation completed successfully")
+        except ValueError as error:
+            print(f"Caught ValueError: {error}")
+        except ZeroDivisionError as error:
+            print(f"Caught ZeroDivisionError: {error}")
+        except FileNotFoundError as error:
+            print(f"Caught FileNotFoundError: {error}")
+        except TypeError as error:
+            print(f"Caught TypeError: {error}")
     print()
     print("All error types tested successfully!")
+
 
 if __name__ == "__main__":
     test_error_types()
