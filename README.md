@@ -43,8 +43,7 @@ It's not meant to be a polished portfolio, think of it more as a **working lab n
 ├── Libft/            # Custom C standard library implementation
 ├── PY pdf/           # Python course PDFs and reference material
 ├── Piscine/          # The Piscine (bootcamp) — foundational modules
-├── Python_00/        # Python curriculum, module 00
-├── Python_01/        # Python curriculum, module 01
+├── Python_.../        # Python curriculum, module ...
 ├── get_next_line/    # Reads a file line-by-line, one call at a time
 ├── main && test/     # Test/main files for printf
 ├── printf/           # Custom recreation of the printf() function
@@ -63,7 +62,7 @@ It's not meant to be a polished portfolio, think of it more as a **working lab n
 | **get_next_line** | Reads a text file line by line, one call at a time | ✅ Passed |
 | **Piscine** | The Piscine bootcamp exercises | ✅ Passed |
 | **Exam_02** | Exam 02 exercises (Python) | ⚙️ in progress... |
-| **Python_00 / Python_01** | Python curriculum modules | ✅ Up to Date, 100/100 norm OK |
+| **Python_...** | Python curriculum modules | Work in progress, flake8 && mypy check |
 
 ---
 
